@@ -1,0 +1,10 @@
+{
+  "frontend/src/index.css": "Global dark code-editor theme using OKLCH color tokens, JetBrains Mono + Inter fonts, code block styles, glow effects, and lesson card hover transitions.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom font families (Inter/JetBrains Mono), difficulty badge colors (beginner/intermediate/advanced), code syntax token colors, glow box shadows, and fade/slide-in animations.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for listing all lessons, fetching user progress, and marking a lesson as complete with automatic cache invalidation.",
+  "frontend/src/components/PythonHighlight.tsx": "Client-side Python syntax highlighter that tokenizes code into keywords, builtins, strings, comments, numbers, and decorators, rendering each line with line numbers in a styled code block.",
+  "frontend/src/components/DifficultyBadge.tsx": "Small reusable badge component that renders a color-coded pill for Beginner (green), Intermediate (amber), or Advanced (red) difficulty levels.",
+  "frontend/src/components/LessonCard.tsx": "Clickable lesson card displaying topic emoji, title, description excerpt, difficulty badge, and a completion checkmark with hover animation effects.",
+  "frontend/src/components/LessonDetail.tsx": "Full lesson detail modal with syntax-highlighted code, copy-to-clipboard, mark-as-complete mutation with loading state, and keyboard/backdrop dismiss support.",
+  "frontend/src/App.tsx": "Main app component with header (logo + progress), hero progress bar, difficulty filter bar, responsive lesson grid with skeleton loading, and footer with attribution."
+}

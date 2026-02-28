@@ -1,0 +1,90 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Python Programming Learning App Frontend",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "summary": "Build lesson browser page with cards showing lessons, difficulty filter, and progress tracking",
+      "acceptanceCriteria": [
+        "All lessons are displayed as cards on the main page",
+        "Cards show title, topic, difficulty badge, and completion indicator",
+        "Filtering by difficulty correctly shows/hides cards",
+        "Progress summary (e.g., '3 of 8 completed') is visible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace the default App component with the lesson browser page. Fetch all lessons using listAllLessons() and user progress using getProgress(). Implement difficulty filter state (All, Beginner, Intermediate, Advanced) and filter the lesson list accordingly. Display filtered lessons as a grid of cards. Show progress summary at the top (e.g., '3 of 8 completed'). Handle lesson card clicks to open detail view (REQ-4). Manage loading and error states for backend calls."
+        },
+        {
+          "path": "frontend/src/components/LessonCard.tsx",
+          "operation": "create",
+          "description": "Create a card component that displays a single lesson. Show lesson title, difficulty badge (color-coded by level), topic tag if available, and a completion checkmark icon if the lesson ID is in the completed list. Accept onClick handler to open detail view. Style according to dark theme requirements (REQ-5) with subtle borders and hover effects."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build lesson detail view with syntax-highlighted code, description, and mark-complete functionality",
+      "acceptanceCriteria": [
+        "Clicking a lesson card opens its detail view",
+        "Code snippet is displayed in a styled, readable monospace block with a distinct code background",
+        "Python keywords are visually distinguished (bold or colored) in the code block",
+        "'Mark as Complete' button calls the backend and updates the UI state immediately",
+        "Button label changes to 'Completed ✓' after marking"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LessonDetail.tsx",
+          "operation": "create",
+          "description": "Create a modal or full-page detail view component for a single lesson. Display the lesson title, difficulty badge, full description, and the Python code snippet in a syntax-highlighted code block with line numbers and monospace font. Apply basic Python keyword highlighting (bold or colored for keywords like def, class, if, for, import, return, etc.). Include a 'Mark as Complete' button that calls markComplete(lessonId) and updates local state. Change button label to 'Completed ✓' when the lesson is already completed. Provide a close/back button to return to the lesson browser."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add state to track the currently selected lesson ID for detail view. When a lesson card is clicked, set the selected lesson ID. Pass the selected lesson data to LessonDetail component. When detail view is closed, clear the selected lesson ID. After marking a lesson complete, refresh progress state and update the UI immediately."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply dark-themed code editor-inspired visual design with consistent styling across the app",
+      "acceptanceCriteria": [
+        "App uses a dark background color scheme throughout",
+        "Accent color is consistently applied to badges, buttons, and highlights",
+        "Code blocks use a monospace font and a distinguishable background",
+        "UI feels cohesive and polished across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles to implement a dark theme inspired by code editors. Set a deep charcoal or dark slate background color for the body and root elements. Define CSS variables for accent colors (bright green or amber) to be used for highlights, badges, and CTAs. Set a clean sans-serif font for general UI text (e.g., Inter, system-ui). Define a monospace font family for code blocks (e.g., 'Fira Code', 'Consolas', monospace). Add base styles for code blocks with a distinct darker background and padding. Ensure sufficient contrast for readability."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind theme to include dark background colors (charcoal, slate shades), accent colors (green/amber for highlights), and monospace font family. Define custom colors for difficulty badges (e.g., green for Beginner, amber for Intermediate, red for Advanced). Add utility classes for glowing effects on interactive elements (e.g., box-shadow with accent color). Ensure all custom colors align with the dark code editor aesthetic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Display generated logo image in the app header for branding",
+      "acceptanceCriteria": [
+        "Logo image is displayed in the top navigation/header area",
+        "Image is loaded from frontend/public/assets/generated/",
+        "Logo is clearly visible against the dark header background"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a header section at the top of the App component. Include an <img> element with src set to '/assets/generated/pylearn-logo.dim_128x128.png' to display the logo. Style the header with a dark background and ensure the logo is clearly visible. Position the logo on the left side of the header and add the app name 'PyLearn Studio' next to it using the defined sans-serif font and accent color."
+        }
+      ]
+    }
+  ]
+}
