@@ -1,132 +1,37 @@
 {
   "kind": "build_request",
-  "title": "Python Programming Learning App",
+  "title": "Add more Python lessons to the backend",
   "projectName": "PyLearn Studio",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Create a backend actor that stores Python programming lessons, each with a title, description, code snippet (string), difficulty level (Beginner/Intermediate/Advanced), and a unique ID. Provide functions to: list all lessons, get a lesson by ID, and add new lessons. Pre-populate with at least 8 diverse Python lessons covering topics such as variables, loops, functions, list comprehensions, dictionaries, classes, error handling, and file I/O.",
+      "text": "Add at least 8 additional Python lessons to the pre-populated lesson list in the backend actor. New lessons should cover a variety of topics and difficulty levels (Beginner, Intermediate, Advanced) not already covered by the existing 8 lessons. Each lesson must include a title, description, topic emoji, difficulty, and a relevant Python code example.",
       "target": "backend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-1"
         ],
         "quotes": [
-          "Create a python programming app"
+          "Add more lesson"
         ]
       },
       "acceptanceCriteria": [
-        "Backend stores lessons with id, title, description, codeSnippet, difficulty, and topic fields",
-        "getLessons() returns all lessons",
-        "getLesson(id) returns a single lesson",
-        "At least 8 pre-populated Python lessons are available on first load"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Create a backend actor function to store and retrieve user progress: which lesson IDs the user has marked as completed. Provide markComplete(lessonId) and getProgress() functions.",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Create a python programming app"
-        ]
-      },
-      "acceptanceCriteria": [
-        "markComplete(lessonId) persists a completed lesson ID",
-        "getProgress() returns the list of completed lesson IDs",
-        "Progress persists across page reloads"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Build a lesson browser page showing all available Python lessons as cards. Each card displays the lesson title, topic tag, difficulty badge, and a completion checkmark if the user has completed it. Include a filter bar to filter lessons by difficulty level (All, Beginner, Intermediate, Advanced).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Create a python programming app"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All lessons are displayed as cards on the main page",
-        "Cards show title, topic, difficulty badge, and completion indicator",
-        "Filtering by difficulty correctly shows/hides cards",
-        "Progress summary (e.g., '3 of 8 completed') is visible"
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Build a lesson detail view that opens when a user clicks a lesson card. The detail view displays the full lesson description and a syntax-highlighted Python code snippet using a monospace code block with line numbers. Include a 'Mark as Complete' button that updates the user's progress in the backend.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Create a python programming app"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Clicking a lesson card opens its detail view",
-        "Code snippet is displayed in a styled, readable monospace block with a distinct code background",
-        "Python keywords are visually distinguished (bold or colored) in the code block",
-        "'Mark as Complete' button calls the backend and updates the UI state immediately",
-        "Button label changes to 'Completed ✓' after marking"
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Apply a cohesive dark-themed visual design inspired by code editors: deep charcoal/dark slate backgrounds, bright green or amber accent colors for highlights and CTAs, monospace fonts for code blocks, and a clean sans-serif font for UI text. Use consistent card layouts, subtle borders, and glowing accent effects on interactive elements.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ]
-      },
-      "acceptanceCriteria": [
-        "App uses a dark background color scheme throughout",
-        "Accent color is consistently applied to badges, buttons, and highlights",
-        "Code blocks use a monospace font and a distinguishable background",
-        "UI feels cohesive and polished across all pages"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Generate and display a logo image for the app header: a stylized Python snake icon intertwined with code brackets on a dark background, used as the app's branding mark in the top navigation bar.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Logo image is displayed in the top navigation/header area",
-        "Image is loaded from frontend/public/assets/generated/",
-        "Logo is clearly visible against the dark header background"
+        "At least 8 new lessons are pre-populated in the backend actor in addition to the existing 8.",
+        "New lessons span all three difficulty levels: Beginner, Intermediate, and Advanced.",
+        "Each new lesson has a non-empty title, description, topic emoji, and Python code example.",
+        "All new lessons are returned by the listLessons query and are accessible by their ID."
       ]
     }
   ],
-  "constraints": [
-    "Do not attempt to execute Python code at runtime — the platform runs Motoko on the backend only",
-    "All Python code examples must be stored as static strings in the backend",
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui"
-  ],
+  "constraints": [],
   "nonGoals": [
-    "Live Python code execution or a REPL environment",
-    "User authentication or login (Internet Identity not required for this app)",
-    "User-submitted code challenges or auto-grading",
-    "External Python documentation API integration"
+    "Changing the lesson data model or schema.",
+    "Modifying the frontend UI or lesson display components.",
+    "Adding new lesson categories or tags beyond the existing difficulty system."
   ],
   "imageRequirements": {
-    "required": [
-      "Stylized Python snake coiled around angle brackets (< >) with a glowing green tint on a dark charcoal background (pylearn-logo.dim_128x128.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

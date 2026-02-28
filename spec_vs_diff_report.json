@@ -1,76 +1,22 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-28T03:59:18.691Z",
-  "summary": "The diff implements most requirements well: backend actor with lessons and progress functions, frontend lesson browser with filtering, lesson detail modal with syntax highlighting, dark theme, and logo display. However, several specific acceptance criteria have gaps: the backend Lesson type lacks a 'topic' field, the lessons lack topic field data, the logo image file itself is not present in the diff (only referenced), and the LessonCard does not display a topic tag from a dedicated field.",
+  "generatedAt": "2026-02-28T04:10:39.965Z",
+  "summary": "The diff adds new lessons to backend/main.mo. At least 8 new lessons are visible (IDs 8–15+ from the truncated content), covering Beginner, Intermediate, and Advanced difficulties. Each lesson includes title, description, codeSnippet, and difficulty. However, the build request specifically requires a 'topic emoji' field in each lesson, which does not appear in the Lesson type definition or any lesson records shown in the diff.",
   "missing_requirements": [
     {
       "id": "REQ-1",
-      "requirement": "Backend stores lessons with a 'topic' field; lessons cover topics such as variables, loops, functions, list comprehensions, dictionaries, classes, error handling, and file I/O with topic field populated.",
-      "reason": "The Lesson type in backend/main.mo does not include a 'topic' field — it only has id, title, description, codeSnippet, and difficulty. The acceptance criteria explicitly require a 'topic' field.",
-      "evidence": [
-        "backend/main.mo"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "requirement": "Cards show title, topic (tag), difficulty badge, and completion indicator.",
-      "reason": "LessonCard.tsx derives a topic icon from the title string using keyword matching rather than displaying a dedicated 'topic' field/tag from the lesson data, because the backend Lesson type has no topic field. A proper topic tag from backend data is not displayed.",
-      "evidence": [
-        "frontend/src/components/LessonCard.tsx",
-        "backend/main.mo"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "requirement": "Logo image file (pylearn-logo.dim_128x128.png) must exist at frontend/public/assets/generated/.",
-      "reason": "The diff shows no added image file at frontend/public/assets/generated/pylearn-logo.dim_128x128.png. The image is referenced in App.tsx but there is no evidence the actual file was generated or added.",
-      "evidence": [
-        "frontend/src/App.tsx"
-      ]
-    }
-  ],
-  "hallucinated_features": [
-    {
-      "description": "Copy-to-clipboard button in the lesson detail view.",
-      "reason": "The build request does not mention a copy-to-clipboard feature for code snippets. LessonDetail.tsx implements a copy button with clipboard API.",
-      "evidence": [
-        "frontend/src/components/LessonDetail.tsx"
-      ]
-    },
-    {
-      "description": "Keyboard (Escape) and backdrop click dismissal of the lesson detail modal.",
-      "reason": "The build request does not specify keyboard navigation or backdrop-click-to-close behavior for the lesson detail view.",
-      "evidence": [
-        "frontend/src/components/LessonDetail.tsx"
-      ]
-    },
-    {
-      "description": "Principal-based per-user progress tracking using Internet Identity.",
-      "reason": "The build request explicitly states 'User authentication or login (Internet Identity not required for this app)' as a non-goal, yet the backend uses caller Principal to segregate progress per user.",
+      "requirement": "Each new lesson must include a topic emoji field.",
+      "reason": "The Lesson type definition in backend/main.mo does not include a topicEmoji (or equivalent) field, and none of the lesson records in the diff contain a topic emoji. The build request explicitly states each lesson must include a 'topic emoji'.",
       "evidence": [
         "backend/main.mo"
       ]
     }
   ],
+  "hallucinated_features": [],
   "confidence": 0.82,
   "changed_files": [
-    "all_files_summary.json",
     "backend/main.mo",
-    "frontend-file-summaries.txt",
-    "frontend/index.css",
-    "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/src/components/DifficultyBadge.tsx",
-    "frontend/src/components/LessonCard.tsx",
-    "frontend/src/components/LessonDetail.tsx",
-    "frontend/src/components/PythonHighlight.tsx",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

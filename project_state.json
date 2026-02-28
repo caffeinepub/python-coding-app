@@ -1,73 +1,29 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "A Python programming app built with React + Motoko. Since the platform doesn't run Python natively, the app will focus on Python programming concepts, code examples, and learning/practice features.",
-  "architectural_notes": [
-    "Platform is React + Motoko; Python cannot be executed natively — app should focus on Python learning/display content"
-  ],
+  "summary": "Educational app with lessons content",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Stylized Python snake coiled around angle brackets (< >) with a glowing green tint on a dark charcoal background (pylearn-logo.dim_128x128.png)",
-  "existing_features": [
-    {
-      "id": "feature-build-a-lesson-browser-page-showing-all-available-python-lessons-as-cards-each-card-displays-the-lesson-title-topic-tag-difficulty-badge-and-a-completion-checkmark-if-the-user-has-completed-it-include-a-filter-bar-to-filter-lessons-by-difficulty-level-all-beginner-intermediate-advanced",
-      "title": "Build a lesson browser page showing all available Python lessons as cards. Each card displays the lesson title, topic tag, difficulty badge, and a completion checkmark if the user has completed it. Include a filter bar to filter lessons by difficulty level (All, Beginner, Intermediate, Advanced).",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-lesson-detail-view-that-opens-when-a-user-clicks-a-lesson-card-the-detail-view-displays-the-full-lesson-description-and-a-syntax-highlighted-python-code-snippet-using-a-monospace-code-block-with-line-numbers-include-a-mark-as-complete-button-that-updates-the-user-s-progress-in-the-backend",
-      "title": "Build a lesson detail view that opens when a user clicks a lesson card. The detail view displays the full lesson description and a syntax-highlighted Python code snippet using a monospace code block with line numbers. Include a 'Mark as Complete' button that updates the user's progress in the backend.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-apply-a-cohesive-dark-themed-visual-design-inspired-by-code-editors-deep-charcoal-dark-slate-backgrounds-bright-green-or-amber-accent-colors-for-highlights-and-ctas-monospace-fonts-for-code-blocks-and-a-clean-sans-serif-font-for-ui-text-use-consistent-card-layouts-subtle-borders-and-glowing-accent-effects-on-interactive-elements",
-      "title": "Apply a cohesive dark-themed visual design inspired by code editors: deep charcoal/dark slate backgrounds, bright green or amber accent colors for highlights and CTAs, monospace fonts for code blocks, and a clean sans-serif font for UI text. Use consistent card layouts, subtle borders, and glowing accent effects on interactive elements.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-generate-and-display-a-logo-image-for-the-app-header-a-stylized-python-snake-icon-intertwined-with-code-brackets-on-a-dark-background-used-as-the-app-s-branding-mark-in-the-top-navigation-bar",
-      "title": "Generate and display a logo image for the app header: a stylized Python snake icon intertwined with code brackets on a dark background, used as the app's branding mark in the top navigation bar.",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    }
-  ],
+  "existing_features": [],
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Python programming learning app with code examples, exercises, and interactive Python content",
+      "summary": "Add more lessons to the app",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Create a backend actor that stores Python programming lessons, each with a title, description, code snippet (string), difficulty level (Beginner/Intermediate/Advanced), and a unique ID. Provide functions to: list all lessons, get a lesson by ID, and add new lessons. Pre-populate with at least 8 diverse Python lessons covering topics such as variables, loops, functions, list comprehensions, dictionaries, classes, error handling, and file I/O.",
+      "summary": "Add at least 8 additional Python lessons to the pre-populated lesson list in the backend actor. New lessons should cover a variety of topics and difficulty levels (Beginner, Intermediate, Advanced) not already covered by the existing 8 lessons. Each lesson must include a title, description, topic emoji, difficulty, and a relevant Python code example.",
       "reqIds": [
         "REQ-1"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Create a backend actor function to store and retrieve user progress: which lesson IDs the user has marked as completed. Provide markComplete(lessonId) and getProgress() functions.",
-      "reqIds": [
-        "REQ-2"
       ],
       "status": "pending"
     }
   ],
   "gameProjectType": "none",
-  "projectName": "Python Programming App",
+  "projectName": "PyLearn Studio",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

@@ -90,7 +90,64 @@ actor {
       codeSnippet = "with open('data.txt', 'w') as file:\n    file.write('Hello, File!')";
       difficulty = #Advanced;
     },
+    {
+      id = 8;
+      title = "String Manipulation";
+      description = "Learn how to manipulate and format strings in Python.";
+      codeSnippet = "name = 'john'\ncapitalized = name.capitalize()\nprint(f'Hello, {capitalized}!')";
+      difficulty = #Beginner;
+    },
+    {
+      id = 9;
+      title = "Conditional Statements";
+      description = "Understand how to use if, elif, and else statements.";
+      codeSnippet = "x = 10\nif x > 5:\n    print('Greater than 5')\nelif x == 5:\n    print('Equals 5')\nelse:\n    print('Less than 5')";
+      difficulty = #Beginner;
+    },
+    {
+      id = 10;
+      title = "Tuples and Sets";
+      description = "Learn about tuples and sets and their use cases.";
+      codeSnippet = "my_tuple = (1, 2, 3)\nmy_set = {1, 2, 3, 3}\nprint(my_set)";
+      difficulty = #Intermediate;
+    },
+    {
+      id = 11;
+      title = "Lambda Functions";
+      description = "Create anonymous functions using the lambda keyword.";
+      codeSnippet = "add = lambda x, y: x + y\nprint(add(5, 3))";
+      difficulty = #Intermediate;
+    },
+    {
+      id = 12;
+      title = "Regular Expressions";
+      description = "Use regex for pattern matching and string validation.";
+      codeSnippet = "import re\npattern = r'\\d+'\nresult = re.findall(pattern, 'abc123')";
+      difficulty = #Advanced;
+    },
+    {
+      id = 13;
+      title = "List Slicing";
+      description = "Manipulate lists using slicing techniques.";
+      codeSnippet = "numbers = [1, 2, 3, 4, 5]\nsublist = numbers[1:4]";
+      difficulty = #Beginner;
+    },
+    {
+      id = 14;
+      title = "Class Inheritance";
+      description = "Understand how to create subclasses and use inheritance.";
+      codeSnippet = "class Animal:\n    def speak(self):\n        print('Animal speaks')\nclass Dog(Animal):\n    def bark(self):\n        print('Woof!')";
+      difficulty = #Advanced;
+    },
+    {
+      id = 15;
+      title = "List Methods";
+      description = "Use built-in list methods to manipulate lists.";
+      codeSnippet = "numbers = [1, 2, 3]\nnumbers.append(4)\nnumbers.sort()";
+      difficulty = #Beginner;
+    },
   ];
+
   for (lesson in prePopulatedLessons.values()) {
     lessons.add(lesson.id, lesson);
     nextLessonId += 1;
